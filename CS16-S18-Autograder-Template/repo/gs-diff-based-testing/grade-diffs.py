@@ -252,7 +252,7 @@ def performDiff(args,ts,gsTest,gsTests,referenceFilename,studentFilename):
   with open(referenceFilename) as f1, open(studentFilename) as f2:
 
     # Hack to make comparison less picky about final new lines
-    n = 100 # only compare the first 100 lines
+    n = 1000 # only compare the first 1000 lines
     lines_from_f1 = list(map(lambda x:x.strip(), read_first_n_lines(f1, n)))
     lines_from_f2 = list(map(lambda x:x.strip(), read_first_n_lines(f2, n)))
     
