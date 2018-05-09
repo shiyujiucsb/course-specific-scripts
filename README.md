@@ -11,3 +11,7 @@ A couple of notes on adding scripts:
 If you have anything that you would like to be added to the repository, feel free to 
 [fork](https://help.github.com/articles/fork-a-repo/)  and then submit 
 a [pull request](https://help.github.com/articles/about-pull-requests/).
+
+
+Simply create a folder for your course and add scripts to it. If you want a private
+repository for your course, let me know.
