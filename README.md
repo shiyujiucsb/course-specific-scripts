@@ -8,5 +8,6 @@ A couple of notes on adding scripts:
 1. Please make sure they are readable and their purpose is clearly stated.
 2. Do NOT add any script that reveals some assignment specific detail.
 
-
-If you have anything that you would like to be added to the repository, feel free to [fork] (https://help.github.com/articles/fork-a-repo/)  and then submit a [pull request] (https://help.github.com/articles/about-pull-requests/).
+If you have anything that you would like to be added to the repository, feel free to 
+[fork](https://help.github.com/articles/fork-a-repo/)  and then submit 
+a [pull request](https://help.github.com/articles/about-pull-requests/).
