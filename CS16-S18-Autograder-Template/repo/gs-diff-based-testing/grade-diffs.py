@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+'''
+Revised based on Phil Conrad and Caitlin Scarberry's work:
+  https://github.com/ucsb-gradescope-tools/gs-diff-based-testing
+'''
+
 from __future__ import print_function
 
 import json
