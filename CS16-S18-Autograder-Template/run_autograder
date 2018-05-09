@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BASE_DIR=/autograder
+REPO_NAME=repo
+
+cd ${BASE_DIR}/${REPO_NAME}
+
+chmod u+x ./grade.sh
+./grade.sh
+
