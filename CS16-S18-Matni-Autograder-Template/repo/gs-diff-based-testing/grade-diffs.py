@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 
-'''
-Revised based on Phil Conrad and Caitlin Scarberry's work:
-  https://github.com/ucsb-gradescope-tools/gs-diff-based-testing
-'''
-
 from __future__ import print_function
 
 import json
@@ -47,6 +42,13 @@ testSchema ={
         "hidden",
         "after_due_date",
         "after_published",
+        "visible"
+      ]
+    },
+    "output-visibility": {
+      "type": "string",
+      "enum": [
+        "hidden",
         "visible"
       ]
     },
@@ -248,11 +250,11 @@ def read_first_n_lines(f, n):
       lines.append('... ...\n')
   return lines
 
-def performDiff(args,ts,gsTest,gsTests,referenceFilename,studentFilename):
+def performDiff(args,ta,gsTest,gsTests,referenceFilename,studentFilename):
   with open(referenceFilename) as f1, open(studentFilename) as f2:
 
     # Hack to make comparison less picky about final new lines
-    n = 1000 # only compare the first 1000 lines
+    n = 100 # only compare the first 100 lines
     lines_from_f1 = list(map(lambda x:x.strip(), read_first_n_lines(f1, n)))
     lines_from_f2 = list(map(lambda x:x.strip(), read_first_n_lines(f2, n)))
     
@@ -262,7 +264,10 @@ def performDiff(args,ts,gsTest,gsTests,referenceFilename,studentFilename):
       gsTest["score"]=gsTest["max_score"]
     else:
       gsTest["score"]=0
-      gsTest["output"]="\n".join(diffs)
+      if "output-visibility" in ta["test"] and ta["test"]["output-visibility"] == "hidden":
+        gsTest["output"] = "<<OUTPUT HIDDEN BY INSTRUCTOR>>"
+      else:
+        gsTest["output"]="\n".join(diffs)
     gsTests.append(gsTest)  
             
          
@@ -316,7 +321,7 @@ if __name__ == "__main__":
           checkDiffs(args,ta,"stdout",gsTests)
           checkDiffs(args,ta,"stderr",gsTests)
           checkDiffsForFilename(args,ta,gsTests)
-          
+       
        results["tests"] += gsTests
           
        with open('results.json', 'w') as outfile:

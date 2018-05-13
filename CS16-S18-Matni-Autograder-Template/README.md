@@ -3,10 +3,10 @@
 ## Important Files
 * ``repo/diffs.sh``: this script contains all the commands of the test cases. A test case is often like:
 ```
-# @test{"stdout":10}
+# @test{"stdout":10, "output-visibility":"hidden"}
 ./hello < sample.stdin
 ```
-Here the test case runs the program ``hello`` with STDIN ``sample.stdin``. The grader will check STDOUT of this program with the ground truth. This test case is worth 10 points.
+Here the test case runs the program ``hello`` with STDIN ``sample.stdin``. The grader will check STDOUT of this program with the ground truth. This test case is worth 10 points. The diff output is hidden for both instructors and students.
 
 * ``repo/Makefile``: this makefile builds the submissions. Please make sure it is compatible with the other scripts, e.g., ``grade.sh``, ``MAKE-REFERENCE.sh``, etc.
 

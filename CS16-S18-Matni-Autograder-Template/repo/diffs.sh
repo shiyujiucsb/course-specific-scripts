@@ -3,6 +3,9 @@
 # @test{"stdout":10}
 ./hello
 
+# @test{"stdout":10, "output-visibility":"hidden"}
+./hello
+
 # @test{"stdout":10}
 ./hello < sample.stdin
 
