@@ -248,7 +248,10 @@ def checkDiffsForFilename(args,ta,gsTests):
 def read_first_n_lines(f, n):
   lines = []
   for i in range(n):
-    line = f.readline()
+    try:
+      line = f.readline()
+    except:
+      line = "<<FAILED TO LOAD THIS LINE>>"
     if line == '': break
     lines.append(line)
     if i+1 == n:
