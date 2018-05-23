@@ -263,8 +263,8 @@ def performDiff(args,ta,gsTest,gsTests,referenceFilename,studentFilename):
 
     # Hack to make comparison less picky about final new lines
     n = 1000 # only compare the first 1000 lines
-    lines_from_f1 = list(map(lambda x:x.strip(), read_first_n_lines(f1, n)))
-    lines_from_f2 = list(map(lambda x:x.strip(), read_first_n_lines(f2, n)))
+    lines_from_f1 = list(map(lambda x:x.rstrip(), read_first_n_lines(f1, n)))
+    lines_from_f2 = list(map(lambda x:x.rstrip(), read_first_n_lines(f2, n)))
     
     diffs = list(difflib.unified_diff(lines_from_f1,lines_from_f2,
                                       fromfile="expected",tofile="actual"))            
