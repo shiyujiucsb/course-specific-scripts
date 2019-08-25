@@ -29,5 +29,5 @@ zip -r autograder_to_upload.zip *
 ## Discussions
 * One may consider using a private git repo to store the test cases and ground-truth source code. 
   - The advantage of this way is that one may update the test cases by contributing to the private git repo, without updating and re-building the Docker image again. 
-  - The downside of this way is about security: the secret keys to the private git repo have to be deployed in the repo, and the students can easily get the private information (e.g., repo URL, keys) of the repo, since they are granted root privilege.
+  - The downside of this way is about efficiency: each submission has a pull from github, which has latency at level of seconds.
 
