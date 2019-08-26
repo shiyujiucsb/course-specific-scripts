@@ -21,7 +21,7 @@ Here the test case runs the program ``hello`` with STDIN ``sample.stdin``. The g
 * ``repo/EXECUTION-FILES``: please put the STDIN input files in this directory.
 
 ## Usage
-To prepare the zip file to upload to Gradescope, go to the directory which contains the files ``setup.sh`` and ``run_autograder``, and compress the two files and the directory ``repo``:
+To prepare the zip file to upload to Gradescope, go to the directory which contains the directory ``repo`` and the files ``setup.sh`` and ``run_autograder``, and compress the two files and the directory ``repo``:
 ```
 zip -r autograder_to_upload.zip *
 ```
